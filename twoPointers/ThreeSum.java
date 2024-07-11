@@ -69,6 +69,8 @@ public class ThreeSum {
         return result;
     }
 	
+	// Best approach (Time complexity -> O(n*n*m), Space complexity -> O(m))
+	// Here, m is number of unique elements in set
 	public List<List<Integer>> threeSum2(int[] nums) {
         int n = nums.length;
         Set<List<Integer>> ansSet = new HashSet<>();
