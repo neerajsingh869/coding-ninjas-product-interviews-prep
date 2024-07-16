@@ -43,6 +43,7 @@ public class RemoveNthNodeFromEnd {
             i++;
         }
 
+        // remove 1st node from linked list
         if (first == null && i != n + 1) return head.next;
 
         while (first != null) {
