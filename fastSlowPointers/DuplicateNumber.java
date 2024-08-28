@@ -42,7 +42,7 @@ public class DuplicateNumber {
 		Can you solve the problem in linear runtime complexity?
 	 */
 	// Time complexity -> O(n * log(n)), Space complexity -> O(log(n))
-	public int findDuplicate1(int[] nums) {
+	public static int findDuplicate1(int[] nums) {
         Arrays.sort(nums);
 
         for (int i = 1; i < nums.length; i++) {
@@ -53,7 +53,7 @@ public class DuplicateNumber {
     }
 	
 	// Time complexity -> O(n), Space complexity -> O(1)
-	public int findDuplicate2(int[] nums) {
+	public static int findDuplicate2(int[] nums) {
         int slow = nums[0];
         int fast = nums[0];
 
@@ -69,6 +69,23 @@ public class DuplicateNumber {
         }
 
         return slow;
+    }
+	
+	// Driver code
+    public static void main(String[] args) {
+        int[][] nums = {
+            {1, 3, 2, 3, 5, 4},
+            {2, 4, 5, 4, 1, 3},
+            {1, 6, 3, 5, 1, 2, 7, 4},
+            {1, 2, 2, 4, 3},
+            {3, 1, 3, 5, 6, 4, 2}
+        };
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(i + 1);
+            System.out.println(".\tnums = "+ Arrays.toString(nums[i]));
+            System.out.println("\tDuplicate number = "+ findDuplicate2(nums[i]));
+            System.out.println(new String(new char[100]).replace('\0', '-'));
+        }
     }
 
 }
