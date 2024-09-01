@@ -13,7 +13,7 @@ public class PalindromeLinkedList {
 		Note: The input linked list prior to the checking process should be 
 		identical to the list after the checking process has been completed.
 	 */
-	
+	// Time complexity -> O(n), Space complexity -> O(1)
 	public static boolean palindrome(LinkedListNode head) {
       if (head == null || head.next == null) return true;
       
