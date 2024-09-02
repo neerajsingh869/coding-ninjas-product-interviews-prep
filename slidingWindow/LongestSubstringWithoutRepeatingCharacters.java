@@ -32,8 +32,28 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		0 <= s.length <= 5 * 104
 		s consists of English letters, digits, symbols and spaces.
 	 */
+	
+	// Time complexity -> O(n * n), Space complexity -> O(n)
+	public int lengthOfLongestSubstring1(String s) {
+		int n = s.length();
+		
+		int maxLength = 0;
+		for (int i = 0; i < n; i++) {
+			int[] hash = new int[255];
+			for (int j = i; j < n; j++) {
+				if (hash[s.charAt(j)] == 1) {
+					break;
+				}
+				
+				maxLength = Math.max(maxLength, j - i + 1);
+				hash[s.charAt(j)] = 1;
+			}
+		}
+		
+		return maxLength;
+	}
     
-	// Time complexity -> O(n), Space complexity -> O(n)
+	// Time complexity -> O(n * n), Space complexity -> O(n)
 	public int lengthOfLongestSubstring2(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
 
@@ -61,7 +81,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         return maxLength;
     }
 	
-	// Time complexity -> O(n), Space complexity -> O(n)
+	// Time complexity -> O(n * n), Space complexity -> O(n)
 	public int lengthOfLongestSubstring3(String s) {
         int n = s.length();
 
